@@ -1,0 +1,30 @@
+#include <iostream>
+
+using namespace std;
+
+int a[10];
+
+int main() {
+	int n1, n2, n3;
+	cin >> n1 >> n2 >> n3;
+
+	int num = n1* n2* n3;
+	int cnt = 0;
+	int num2 = num;
+
+	while (num2 > 0) {
+		num2 = num2 / 10;
+		cnt++;
+	}
+	
+	for (int i = 0; i < cnt; i++) {
+		int x;
+		x = num % 10;
+		a[x]++;
+		num = num / 10;
+	}
+
+	for (int i = 0; i < 10; i++) {
+		cout << a[i] << "\n";
+	}
+}
